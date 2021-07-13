@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon"
+	href="https://www.dps-fpt.vn/wp-content/uploads/2021/05/cropped-favicon-1-32x32.png"
+	type="image/x-icon">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/normalize-CSS.css">
+<link rel="stylesheet"
+	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title>FPT Digital Processing Service</title>
+</head>
+
+<body>
+	<!--header-->
+	<header class="header">
+		<div class="grid">
+			<nav class="header__navbar">
+				<a href="#" class="header__navbar-left"> <img
+					src="https://www.dps-fpt.vn/wp-content/uploads/2019/05/logo_ngang_transparent.png"
+					alt="FPT Software" class="header__navbar-left-img">
+				</a>
+				<ul class="header__navbar-center">
+					<li class="header__navbar-center-item "><a href="/">Home</a>
+					</li>
+					<li class="header__navbar-center-item hover-popup"><a href="#">Service
+							<i class="fa fa-angle-down"></i>
+					</a>
+						<div class="service-option">
+							<ul class="service-option-list">
+								<li class=""><a href="/data-processing">Data
+										Processing</a></li>
+								<li class=""><a href="/data-science">Data Science</a></li>
+								<li class=""><a href="/digital-production">Digital
+										Production</a></li>
+								<li class=""><a href="/managed-service">Managed
+										Service</a></li>
+								<li class=""><a href="/robotic-process-automation">Robotic
+										Process Automation</a></li>
+							</ul>
+						</div></li>
+					<li class="header__navbar-center-item hover-popup-product"><a
+						href="#">Product <i class="fa fa-angle-down"></i>
+					</a>
+						<div class="product-option">
+							<ul class="product-option-list">
+								<li class=""><a th:href="@{https://akabot.io/}" th:target="_blank">akaBot</a></li>
+								<li class=""><a th:href="@{https://akawork.io/}" th:target="_blank">akaWork</a></li>
+							</ul>
+						</div></li>
+					<li class="header__navbar-center-item"><a href="/about-us">About
+							Us</a></li>
+					<li>
+						<div class="search-box">
+							<input type="text" class="search-txt" placeholder="Search...">
+							<a href=""><i class="fa fa-search" title="Search for:"></i></a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<hr>
+
+	<div style="width: 100%; height: 400px;">
+		<div
+			style="float: left; width: 45%; padding-left: 20%; padding-top: 10%">
+			<h1>
+				<font th:text="${service.name}" color="#0984E3" size="8"></font>
+			</h1>
+		</div>
+		<div
+			style="float: right; width: 50%; padding-right: 40%; padding-top: 5%">
+			<img th:src="${service.image}" width="500px" height="250px">
+		</div>
+	</div>
+
+	<div style="width: 100%; height: 300px;">
+		<div style="float: left; padding-left: 22%">
+			<h1 align="center">
+				<font th:text="${service.establishedCapability}" color="#0984E3"
+					size="6"></font>
+			</h1>
+			<p>
+				<font color="grey" size="3"> Established Capability</font>
+			</p>
+		</div>
+
+		<div style="float: left; padding-left: 10%">
+			<h1 align="center">
+				<font th:text="${service.rebuiltSystems}" color="#0984E3" size="6"></font>
+			</h1>
+			<p>
+				<font color="grey" size="3"> Rebuilt Systems</font>
+			</p>
+		</div>
+
+		<div style="float: left; padding-left: 10%">
+			<h1 align="center">
+				<font th:text="${service.salesUsers}" color="#0984E3" size="6"></font>
+			</h1>
+			<p>
+				<font color="grey" size="3"> Sales Users Supported Globally</font>
+			</p>
+		</div>
+	</div>
+
+	<th:block th:each="item : ${listServiceDetail}">
+		<div style="width: 100%; height: 300px;">
+			<div
+				style="float: left; width: 50%; padding-left: 15%; padding-top: 7%;">
+				<h1>
+					<font th:text="${item.title}" color="#0984E3" size="5"></font>
+				</h1>
+				<p>
+					<font th:text="${item.contents}" color="grey" size="3"></font>
+				</p>
+			</div>
+			<div
+				style="float: right; width: 40%; padding-right: 25%; padding-top: 3%;">
+				<img th:src="${item.image}" width="300px" height="250px">
+			</div>
+		</div>
+	</th:block>
+
+
+	<div style="background-color: #0984e354; width: 100%; height: 120px;">
+		<div style="float: left; padding-left: 10%; padding-top: 1%;">
+			<h1>
+				<font color="#0984E3" size="8"> But first </font>
+			</h1>
+		</div>
+		<div style="float: left; padding-left: 3%; padding-top: 3%;">
+			<p>
+				<font color="grey" size="3">Let us know about your story</font>
+			</p>
+		</div>
+		<div style="padding-left: 65%; padding-top: 2%">
+			<h1>
+				<font color="#0984E3" size="6"> Contact Infomation For Us </font>
+			</h1>
+		</div>
+	</div>
+
+	<br>
+	<hr>
+	<footer class="footer">
+		<div class="footer-grid-layout">
+			<div class="footer-item1">
+				<div class="title">DIGITAL INNOVATION</div>
+				<br>
+				<div class="item1">
+					<i class="fa fa-angle-right"></i> <a href="/data-processing" class="footer-link">
+						Data Processing </a>
+				</div>
+				<br>
+				<div class="item2">
+					<i class="fa fa-angle-right"></i> <a href="/data-science" class="footer-link">
+						Data Science </a>
+				</div>
+				<br>
+				<div class="item3">
+					<i class="fa fa-angle-right"></i> <a href="/digital-production" class="footer-link">
+						Digital Production </a>
+				</div>
+				<br>
+				<div class="item4">
+					<i class="fa fa-angle-right"></i> <a href="/managed-service" class="footer-link">
+						Managed Service </a>
+				</div>
+				<br>
+				<div class="item5">
+					<i class="fa fa-angle-right"></i> <a href="/robotic-process-automation" class="footer-link">
+						Robotic Process Automation </a>
+				</div>
+			</div>
+			<div class="footer-item2">
+				<div class="title">DIGITAL TRANSFORMATION</div>
+				<br>
+				<div class="item1">
+					<i class="fa fa-angle-right"></i> <a th:href="@{https://akabot.io/}" th:target="_blank" class="footer-link">
+						akaBot </a>
+				</div>
+				<br>
+				<div class="item2">
+					<i class="fa fa-angle-right"></i> <a th:href="@{https://akawork.io/}" th:target="_blank" class="footer-link">
+						akaWork </a>
+				</div>
+				<br>
+			</div>
+			<div class="footer-media">
+				<h1 class="media-title">FPT DIGITAL PROCESSING SERVICE</h1>
+				<p class="media-content">Address: No.1 Road, FPT Building, An
+					Don Industrial Park, Ngo Quyen Str., An Hai Bac Ward, Son Tra
+					Dist., Danang, Vietnam</p>
+				<div class="media-logo">
+					<a href="#" class="email"> <i class="fa fa-envelope-square"></i>
+					</a> <a href="https://www.facebook.com/fptsoftware.dps/" class="facebook"> <i class="fa fa-facebook"></i>
+					</a> <a href="https://www.linkedin.com/company/dpsfptsoftware/" class="linkedin"> <i class="fa fa-linkedin"></i>
+					</a>
+				</div>
+				<p class="cpr">Copyright © 2021 by FPT DPS</p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

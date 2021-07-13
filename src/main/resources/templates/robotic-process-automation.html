@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon"
+	href="https://www.dps-fpt.vn/wp-content/uploads/2021/05/cropped-favicon-1-32x32.png"
+	type="image/x-icon">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/normalize-CSS.css">
+<link rel="stylesheet"
+	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title>FPT Digital Processing Service</title>
+</head>
+
+<body>
+	<!--header-->
+	<header class="header">
+		<div class="grid">
+			<nav class="header__navbar">
+				<a href="#" class="header__navbar-left"> <img
+					src="https://www.dps-fpt.vn/wp-content/uploads/2019/05/logo_ngang_transparent.png"
+					alt="FPT Software" class="header__navbar-left-img">
+				</a>
+				<ul class="header__navbar-center">
+					<li class="header__navbar-center-item "><a href="/">Home</a>
+					</li>
+					<li class="header__navbar-center-item hover-popup"><a href="#">Service
+							<i class="fa fa-angle-down"></i>
+					</a>
+						<div class="service-option">
+							<ul class="service-option-list">
+								<li class=""><a href="/data-processing">Data
+										Processing</a></li>
+								<li class=""><a href="/data-science">Data Science</a></li>
+								<li class=""><a href="/digital-production">Digital
+										Production</a></li>
+								<li class=""><a href="/managed-service">Managed
+										Service</a></li>
+								<li class=""><a href="/robotic-process-automation">Robotic
+										Process Automation</a></li>
+							</ul>
+						</div></li>
+					<li class="header__navbar-center-item hover-popup-product"><a
+						href="#">Product <i class="fa fa-angle-down"></i>
+					</a>
+						<div class="product-option">
+							<ul class="product-option-list">
+								<li class=""><a th:href="@{https://akabot.io/}" th:target="_blank">akaBot</a></li>
+								<li class=""><a th:href="@{https://akawork.io/}" th:target="_blank">akaWork</a></li>
+							</ul>
+						</div></li>
+					<li class="header__navbar-center-item"><a href="/about-us">About
+							Us</a></li>
+					<li>
+						<div class="search-box">
+							<input type="text" class="search-txt" placeholder="Search...">
+							<a href=""><i class="fa fa-search" title="Search for:"></i></a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<hr>
+	<!--content-->
+	<section class="rpa__container">
+		<div class="rpa__container-introduce">
+			<h1 th:text="${service.name}" class="title"></h1>
+			<img th:src="${service.image}" alt="">
+		</div>
+		<div class="rpa__introduce-content">
+			<div class="content-left">
+				<h1 th:text="${service.establishedCapability}" class="title"></h1>
+				<p class="content">RPA Services Started</p>
+			</div>
+			<div class="content-right">
+				<h1 th:text="${service.salesUsers}" class="title"></h1>
+				<p class="content">Stores Supported</p>
+			</div>
+		</div>
+
+		<div class="rpa__full-service">
+			<div class="service-title">
+				<h1>Full RPA Service</h1>
+				<img
+					src="https://dps-fpt.vn/wp-content/uploads/2019/06/62547073_378693022760838_8557451870304468992_n-1024x269.png"
+					alt="Full RPA Service">
+			</div>
+			<div class="service-content">
+
+				<th:block th:each="item, state : ${listServiceDetail}">
+					<div th:class="content + ${state.count}">
+						<img th:src="${item.image}" alt="">
+						<h1 th:text="${item.title}"></h1>
+						<p th:text="${item.contents}"></p>
+					</div>
+				</th:block>
+
+			</div>
+		</div>
+
+		<div class="rpa-platform">
+			<h1>RPA Platforms</h1>
+			<div class="rpa-platform-content">
+				<img
+					src="https://dps-fpt.vn/wp-content/uploads/2019/06/62380674_888963068122956_7961324449867759616_n.png"
+					alt="" class="rpa-platform-akabot"> <img
+					src="https://dps-fpt.vn/wp-content/uploads/2019/06/64492130_565966163929170_6284963843399483392_n.png"
+					alt="" class="rpa-platform-uipath"> <img
+					src="https://dps-fpt.vn/wp-content/uploads/2019/06/64652529_432196967560962_8806917795787833344_n.png"
+					alt="" class="rpa-platform-blueprism"> <img
+					src="https://dps-fpt.vn/wp-content/uploads/2019/06/64395866_340706989927550_7780632504255381504_n.png"
+					alt="" class="rpa-platform-automation"> <img
+					src="https://dps-fpt.vn/wp-content/uploads/2019/06/62599794_2200766946702980_8079048562853281792_n.png"
+					alt="" class="rpa-platform-winactor"> <img
+					src="https://dps-fpt.vn/wp-content/uploads/2019/06/62421413_491707631562679_5912504026087292928_n.png"
+					alt="" class="rpa-platform-kofax"> <img
+					src="https://dps-fpt.vn/wp-content/uploads/2019/06/62491679_2265912826787572_7315542465845395456_n.png"
+					alt="" class="rpa-platform-bizrobo"> <img
+					src="https://dps-fpt.vn/wp-content/uploads/2019/06/62596636_673090599819860_7946037226742218752_n.png"
+					alt="" class="rpa-platform-pentaho">
+			</div>
+		</div>
+
+		<div class="AI-platform">
+			<h1>AI Platforms</h1>
+			<div class="AI-platform-content">
+				<img
+					src="https://dps-fpt.vn/wp-content/uploads/2019/06/62435549_193639241562565_3466346453947908096_n.png"
+					alt="" class="microsoft"> <img
+					src="https://dps-fpt.vn/wp-content/uploads/2019/06/64480816_3324804437545239_4328192656195715072_n.png"
+					alt="" class="fpt-ai"> <img
+					src="https://dps-fpt.vn/wp-content/uploads/2019/06/64375932_313991076195760_9097780235272716288_n.png"
+					alt="" class="arago"> <img
+					src="https://dps-fpt.vn/wp-content/uploads/2019/06/64258374_1313376695478825_9082858058597531648_n.png"
+					alt="" class="wit-ai"> <img
+					src="https://dps-fpt.vn/wp-content/uploads/2019/06/62341983_2364675220522975_1220851862706585600_n.png"
+					alt="" class="ibm-watson">
+			</div>
+		</div>
+
+		<div class="rpa-success-stories">
+			<h1 class="rpa-success-stories__title">Success Stories</h1>
+			<div class="rpa__story">
+				<div class="rpa_story1">
+					<img
+						src="https://dps-fpt.vn/wp-content/uploads/2019/06/63495157_2289098668015657_6247770457408274432_n.png"
+						alt="">
+					<p class="rpa_story1-alt-image">BACK OFFICE</p>
+					<div class="rpa_content1">
+						<h1 class="rpa_story1-title">Reducing workload for back
+							office staff by automating onboard process</h1>
+						<p class="rpa_story1-content">A big firm has to collect, input
+							and prepare profiles for 300 – 500 new employees every month,
+							taking a lot of effort and high chance of making mistakes…</p>
+					</div>
+					<button class="rpa_btn1">
+						<a href="#" class="readmore"> Read more </a>
+					</button>
+				</div>
+				<div class="rpa_story2">
+					<img
+						src="https://dps-fpt.vn/wp-content/uploads/2019/06/64348858_1307286952772738_2777221807457959936_n.png"
+						alt="">
+					<p class="rpa_story2-alt-image">BANKING</p>
+					<div class="rpa_content2">
+						<h1 class="rpa_story2-title">Automation of remittance
+							transactions in banking to save effort</h1>
+						<p class="rpa_story2-content">A large bank had to manually
+							process more than 1000 payment transactions a day, suffering from
+							low productivity due to human errors and long processing time…</p>
+					</div>
+					<button class="rpa_btn2">
+						<a href="#" class="readmore"> Read more </a>
+					</button>
+				</div>
+				<div class="rpa_story3">
+					<img
+						src="https://dps-fpt.vn/wp-content/uploads/2019/06/62316995_664062334055595_5416784574434770944_n.png
+                    "
+						alt="">
+					<p class="rpa_story3-alt-image">RETAIL</p>
+					<div class="rpa_content3">
+						<h1 class="rpa_story3-title">Global retailer automate the
+							process of inputting orders and receipts</h1>
+						<p class="rpa_story3-content">A Vietnamese retailer with over
+							200 shopping malls and 17,000 employees needs to input thousands
+							orders and receipts from vendors into management systems…</p>
+					</div>
+					<button class="rpa_btn3">
+						<a href="#" class="readmore"> Read more </a>
+					</button>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<div style="background-color: #0984e354; width: 100%; height: 120px;">
+		<div style="float: left; padding-left: 10%; padding-top: 1%;">
+			<h1>
+				<font color="#0984E3" size="8"> But first </font>
+			</h1>
+		</div>
+		<div style="float: left; padding-left: 3%; padding-top: 3%;">
+			<p>
+				<font color="grey" size="3">Let us know about your story</font>
+			</p>
+		</div>
+		<div style="padding-left: 65%; padding-top: 2%">
+			<h1>
+				<font color="#0984E3" size="6"> Contact Infomation For Us </font>
+			</h1>
+		</div>
+	</div>
+
+	<br>
+	<hr>
+	<footer class="footer">
+		<div class="footer-grid-layout">
+			<div class="footer-item1">
+				<div class="title">DIGITAL INNOVATION</div>
+				<br>
+				<div class="item1">
+					<i class="fa fa-angle-right"></i> <a href="/data-processing" class="footer-link">
+						Data Processing </a>
+				</div>
+				<br>
+				<div class="item2">
+					<i class="fa fa-angle-right"></i> <a href="/data-science" class="footer-link">
+						Data Science </a>
+				</div>
+				<br>
+				<div class="item3">
+					<i class="fa fa-angle-right"></i> <a href="/digital-production" class="footer-link">
+						Digital Production </a>
+				</div>
+				<br>
+				<div class="item4">
+					<i class="fa fa-angle-right"></i> <a href="/managed-service" class="footer-link">
+						Managed Service </a>
+				</div>
+				<br>
+				<div class="item5">
+					<i class="fa fa-angle-right"></i> <a href="/robotic-process-automation" class="footer-link">
+						Robotic Process Automation </a>
+				</div>
+			</div>
+			<div class="footer-item2">
+				<div class="title">DIGITAL TRANSFORMATION</div>
+				<br>
+				<div class="item1">
+					<i class="fa fa-angle-right"></i> <a th:href="@{https://akabot.io/}" th:target="_blank" class="footer-link">
+						akaBot </a>
+				</div>
+				<br>
+				<div class="item2">
+					<i class="fa fa-angle-right"></i> <a th:href="@{https://akawork.io/}" th:target="_blank" class="footer-link">
+						akaWork </a>
+				</div>
+				<br>
+			</div>
+			<div class="footer-media">
+				<h1 class="media-title">FPT DIGITAL PROCESSING SERVICE</h1>
+				<p class="media-content">Address: No.1 Road, FPT Building, An
+					Don Industrial Park, Ngo Quyen Str., An Hai Bac Ward, Son Tra
+					Dist., Danang, Vietnam</p>
+				<div class="media-logo">
+					<a href="#" class="email"> <i class="fa fa-envelope-square"></i>
+					</a> <a href="https://www.facebook.com/fptsoftware.dps/" class="facebook"> <i class="fa fa-facebook"></i>
+					</a> <a href="https://www.linkedin.com/company/dpsfptsoftware/" class="linkedin"> <i class="fa fa-linkedin"></i>
+					</a>
+				</div>
+				<p class="cpr">Copyright © 2021 by FPT DPS</p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

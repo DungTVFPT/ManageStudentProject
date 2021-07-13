@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon"
+	th:href="@{https://www.dps-fpt.vn/wp-content/uploads/2021/05/cropped-favicon-1-32x32.png}"
+	type="image/x-icon">
+<link rel="stylesheet" th:href="@{/css/main.css}">
+<link rel="stylesheet" th:href="@{/css/base.css}">
+<link rel="stylesheet" th:href="@{/css/normalize-CSS.css}">
+<link rel="stylesheet"
+	th:href="@{http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css}">
+<title>FPT Digital Processing Service</title>
+</head>
+
+<body>
+	<button onclick="topFunction()" id="myBtn" title="Go to top">
+		<i class="fa fa-angle-up"></i>
+	</button>
+	<header class="header">
+		<div class="grid">
+			<nav class="header__navbar">
+				<a href="#" class="header__navbar-left"> <img
+					src="https://www.dps-fpt.vn/wp-content/uploads/2019/05/logo_ngang_transparent.png"
+					alt="FPT Software" class="header__navbar-left-img">
+				</a>
+				<ul class="header__navbar-center">
+					<li class="header__navbar-center-item "><a href="/">Home</a>
+					</li>
+					<li class="header__navbar-center-item hover-popup"><a href="#">Service
+							<i class="fa fa-angle-down"></i>
+					</a>
+						<div class="service-option">
+
+							<ul>
+								<th:block th:each="item : ${listDigitalInnovation}">
+									<li class=""><a th:text="${item.name}" th:href="@{'/' + ${item.url}}"></a></li>
+								</th:block>
+
+
+							</ul>
+						</div></li>
+					<li class="header__navbar-center-item hover-popup-product"><a
+						href="#">Product <i class="fa fa-angle-down"></i>
+					</a>
+						<div class="product-option">
+							<ul class="product-option-list">
+								<li th:each="product : ${listProducts}"><a
+									th:text="${product.name}" th:href="@{${product.url}}" th:target="_blank"></a></li>
+							</ul>
+						</div></li>
+					<li class="header__navbar-center-item"><a href="/about-us">About
+							Us</a></li>
+					<li>
+						<div class="search-box">
+							<input type="text" class="search-txt" placeholder="Search...">
+							<a href=""><i class="fa fa-search" title="Search for:"></i></a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<hr>
+	<section class="container">
+		<div class="service-overview">
+			<h1>Service Overview</h1>
+			<p>Empower your business model to succeed with Digital
+				Transformation services</p>
+		</div>
+		<br>
+		<div class="grid-layout-1">
+			<div class="digi-transform">
+				<div class="digi-transform-detail">
+					<h1 class="title">DIGITAL TRANSFORMATION</h1>
+					<div th:each="dgt : ${listDigitalTransformation}">
+						<p th:text="${dgt.name}" class="annotation"></p>
+						<a th:text="${dgt.contents}" class="detail"></a>
+					</div>
+				</div>
+				<img
+					th:src="@{https://www.dps-fpt.vn/wp-content/uploads/2019/06/digital-transformation.png}"
+					alt="Transformation">
+			</div>
+			<div class="digi-inno">
+				<div class="digi-inno-detail">
+					<h1>DIGITAL INNOVATION</h1>
+					<div th:each="dgt : ${listDigitalInnovation}" class="service1">
+						<p th:text="${dgt.name}" class="service1-title"></p>
+						<a th:text="${dgt.contents}" th:href="@{'/' + ${dgt.url}}" class="service1-detail"></a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="products">
+			<h1 class="title">Product</h1>
+			<div class="slideshow-container">
+				<!-- Full-width images with number and caption text -->
+				<div class="mySlides fade">
+					<div class="numbertext"></div>
+					<img src="./img/img1.jpeg" style="width: 100%">
+				</div>
+
+				<div class="mySlides fade">
+					<div class="numbertext"></div>
+					<img src="./img/img2.jpeg" style="width: 100%">
+				</div>
+			</div>
+			<br>
+
+			<!-- The dots/circles -->
+			<div style="text-align: center">
+				<span class="dot" onclick="currentSlide(1)"></span> <span
+					class="dot" onclick="currentSlide(2)"></span>
+			</div>
+
+		</div>
+		<div class="industries">
+			<h1 class="title">Industries</h1>
+			<p class="detail">Deliver comprehensive BPO services and solution
+				for businesses in a vast array of industries</p>
+			<div class="grid-layout-2">
+				<div th:each="industries : ${listIndustries}" class="automotive">
+					<img th:src="${industries.image}" alt="" class="automotive-img">
+					<h1 th:text="${industries.name}" class="automotive-title"></h1>
+					<p th:text="${industries.contents}" class="automotive-content"></p>
+				</div>
+			</div>
+		</div>
+		<div class="success-stories">
+			<h1 class="title">Success Stories</h1>
+			<div class="story">
+				<div th:each="ss : ${listSuccessStories}" class="story1">
+					<img th:src="${ss.image}" alt="">
+					<p th:text="${ss.type}" class="story1-alt-image"></p>
+					<div class="content1">
+						<h1 th:text="${ss.name}" class="story1-title"></h1>
+						<p th:text="${ss.contents}" class="story1-content"></p>
+					</div>
+					<button class="btn1">
+						<a th:href="@{${ss.readMore}}" th:target="_blank" class="readmore"> Read more </a>
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="certificate">
+			<h1 class="title">Certifications</h1>
+			<div class="grid-3">
+				<th:block th:each="certificate : ${listCertificate}">
+					<img th:src="${certificate.image}" alt="" class="img1">
+				</th:block>
+			</div>
+		</div>
+	</section>
+	<hr>
+	<footer class="footer">
+		<div class="footer-grid-layout">
+			<div class="footer-item1">
+				<div class="title">DIGITAL INNOVATION</div>
+				<br>
+
+				<th:block th:each="item : ${listDigitalInnovation}">
+					<div class="item1">
+						<i class="fa fa-angle-right"></i> <a th:text="${item.name}"
+							th:href="@{'/' + ${item.url}}" class="footer-link"></a>
+					</div>
+					<br>
+				</th:block>
+			</div>
+			<div class="footer-item2">
+				<div class="title">DIGITAL TRANSFORMATION</div>
+				<br>
+
+				<th:block th:each="product : ${listProducts}">
+					<div class="item1">
+						<i class="fa fa-angle-right"></i> <a th:text="${product.name}"
+							th:href="@{${product.url}}" th:target="_blank" class="footer-link"></a>
+					</div>
+					<br>
+				</th:block>
+			</div>
+			<div class="footer-media">
+				<h1 class="media-title">FPT DIGITAL PROCESSING SERVICE</h1>
+				<th:block th:each="address : ${address}">
+					<p th:text="${address.address}" class="media-content"></p>
+				</th:block>
+
+				<div class="media-logo">
+					<a href="#" class="email"> <i class="fa fa-envelope-square"></i>
+					</a> <a href="https://www.facebook.com/fptsoftware.dps/" class="facebook"> <i class="fa fa-facebook"></i>
+					</a> <a href="https://www.linkedin.com/company/dpsfptsoftware/" class="linkedin"> <i class="fa fa-linkedin"></i>
+					</a>
+				</div>
+				<p class="cpr">Copyright © 2021 by FPT DPS</p>
+			</div>
+		</div>
+	</footer>
+	<script>
+		//button up:
+		//Get the button:
+		mybutton = document.getElementById("myBtn");
+
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function() {
+			scrollFunction()
+		};
+
+		function scrollFunction() {
+			if (document.body.scrollTop > 20
+					|| document.documentElement.scrollTop > 20) {
+				mybutton.style.display = "block";
+			} else {
+				mybutton.style.display = "none";
+			}
+		}
+
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+			document.body.scrollTop = 0; // For Safari
+			document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+		}
+
+		//slideshow
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+		function plusSlides(n) {
+			showSlides(slideIndex += n);
+		}
+
+		function currentSlide(n) {
+			showSlides(slideIndex = n);
+		}
+
+		function showSlides(n) {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("dot");
+			if (n > slides.length) {
+				slideIndex = 1
+			}
+			if (n < 1) {
+				slideIndex = slides.length
+			}
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
+		}
+	</script>
+</body>
+</html>
